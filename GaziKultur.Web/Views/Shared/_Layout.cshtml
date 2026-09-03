@@ -1,0 +1,361 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - GaziKültür</title>
+
+    <link rel="stylesheet"
+          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet"
+          href="~/assets/vendor/bootstrap-icons/bootstrap-icons.css" />
+
+    <link rel="stylesheet"
+          href="~/css/site.css"
+          asp-append-version="true" />
+
+    <style>
+
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #F6F1E8;
+            color: #2F2925;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* NAVBAR */
+
+        .gazi-navbar {
+            position: relative;
+            z-index: 1000;
+            width: 100%;
+            background: #4A3B32;
+            border-bottom: 1px solid rgba(255,255,255,.08);
+            box-shadow: 0 4px 16px rgba(70,55,45,.12);
+        }
+
+        .gazi-navbar-container {
+            width: 100%;
+            max-width: 1180px;
+            min-height: 72px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .gazi-logo {
+            display: flex;
+            flex-direction: column;
+            color: white;
+            text-decoration: none;
+            line-height: 1.1;
+        }
+
+            .gazi-logo:hover {
+                color: white;
+            }
+
+        .gazi-logo-title {
+            color: #FFFDF9;
+            font-size: 22px;
+            font-weight: 750;
+            letter-spacing: .2px;
+        }
+
+        .gazi-logo-subtitle {
+            margin-top: 4px;
+            color: #D8C5AC;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: .8px;
+            text-transform: uppercase;
+        }
+
+        .gazi-menu {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+            .gazi-menu li {
+                margin: 0;
+                padding: 0;
+            }
+
+            .gazi-menu a {
+                display: block;
+                padding: 10px 14px;
+                border-radius: 7px;
+                color: #F6F1E8;
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 600;
+                transition: .2s ease;
+            }
+
+                .gazi-menu a:hover {
+                    color: #ffffff;
+                    background: rgba(255,255,255,.10);
+                }
+
+        /* MOBİL */
+
+        .menu-toggle {
+            display: none;
+            padding: 7px 11px;
+            border: 1px solid rgba(255,255,255,.25);
+            border-radius: 7px;
+            background: transparent;
+            color: white;
+            font-size: 21px;
+            cursor: pointer;
+        }
+
+        /* SAYFA */
+
+        .main-content {
+            width: 100%;
+            min-height: calc(100vh - 150px);
+        }
+
+        /* FOOTER */
+
+        .gazi-footer {
+            width: 100%;
+            margin-top: 0;
+            background: #40342D;
+            color: #EDE2D3;
+            border-top: 1px solid rgba(255,255,255,.08);
+        }
+
+        .gazi-footer-container {
+            width: 100%;
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 24px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .footer-title {
+            color: #FFFDF9;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .footer-copy {
+            color: #CBB8A3;
+            font-size: 12px;
+        }
+
+        @@media (max-width: 760px) {
+
+            .gazi-navbar-container {
+                min-height: 65px;
+                flex-wrap: wrap;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .gazi-navbar nav {
+                width: 100%;
+            }
+
+            .gazi-menu {
+                display: none;
+                width: 100%;
+                padding: 10px 0 15px;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+                .gazi-menu.menu-open {
+                    display: flex;
+                }
+
+                .gazi-menu a {
+                    padding: 11px 12px;
+                }
+
+            .gazi-footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="gazi-navbar">
+
+        <div class="gazi-navbar-container">
+
+            <a asp-controller="Home"
+               asp-action="Index"
+               class="gazi-logo">
+
+                <span class="gazi-logo-title">
+                    GaziKültür
+                </span>
+
+                <span class="gazi-logo-subtitle">
+                    Gaziantep Kültür Portalı
+                </span>
+
+            </a>
+
+
+            <button type="button"
+                    id="menuToggle"
+                    class="menu-toggle"
+                    aria-label="Menüyü Aç">
+
+                ☰
+
+            </button>
+
+
+            <nav>
+
+                <ul class="gazi-menu"
+                    id="gaziMenu">
+
+                    <li>
+                        <a asp-controller="Home"
+                           asp-action="Index">
+
+                            Ana Sayfa
+
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a asp-controller="Muze"
+                           asp-action="Index">
+
+                            Müzeler
+
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a asp-controller="Home"
+                           asp-action="Index"
+                           asp-fragment="iletisim">
+
+                            İletişim
+
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- SAYFA -->
+
+    <main class="main-content">
+
+        @RenderBody()
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="gazi-footer">
+
+        <div class="gazi-footer-container">
+
+            <div class="footer-title">
+                Gaziantep Kültür Portalı
+            </div>
+
+            <div class="footer-copy">
+                © 2026 GaziKültür
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/js/site.js"
+            asp-append-version="true">
+    </script>
+
+
+    <script>
+
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+        const gaziMenu =
+            document.getElementById("gaziMenu");
+
+
+        if (menuToggle && gaziMenu) {
+
+            menuToggle.addEventListener(
+                "click",
+                function () {
+
+                    gaziMenu.classList.toggle(
+                        "menu-open"
+                    );
+
+                }
+            );
+
+        }
+
+    </script>
+
+
+    @await RenderSectionAsync(
+    "Scripts",
+        required: false
+        )
+
+</body>
+
+</html>

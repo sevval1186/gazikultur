@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <RootNamespace>GaziKultur.Service</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Abstract\IKutuphaneService.cs" />
+    <Compile Remove="Concrete\Manager\KutuphaneManager.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GaziKultur.Core\GaziKultur.Core.csproj" />
+    <ProjectReference Include="..\GaziKultur.Data\GaziKultur.Data.csproj" />
+    <ProjectReference Include="..\GaziKultur.Entity\GaziKultur.Entity.csproj" />
+  </ItemGroup>
+
+</Project>

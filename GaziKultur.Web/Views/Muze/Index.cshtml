@@ -1,0 +1,288 @@
+﻿@model List<GaziKultur.Entity.Concrete.Muze>
+
+@{
+    ViewData["Title"] = "Müzeler";
+}
+
+<style>
+
+    .muze-page {
+        min-height: 100vh;
+        background: #f6f2ec;
+        padding: 55px 20px 80px;
+    }
+
+    .muze-container {
+        max-width: 1180px;
+        margin: 0 auto;
+    }
+
+    .muze-page-header {
+        margin-bottom: 34px;
+    }
+
+        .muze-page-header span {
+            display: block;
+            margin-bottom: 7px;
+            color: #9b8a7c;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+
+        .muze-page-header h1 {
+            margin: 0;
+            color: #352e29;
+            font-size: 38px;
+            font-weight: 800;
+        }
+
+    .muze-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    .muze-card {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        min-height: 390px;
+        background: #fffdf9;
+        border: 1px solid #e6dcd0;
+        border-radius: 16px;
+        box-shadow: 0 7px 22px rgba(66, 52, 42, .07);
+        transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+        .muze-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 30px rgba(66, 52, 42, .12);
+        }
+
+    .muze-image {
+        position: relative;
+        height: 215px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #e8ded3;
+    }
+    s
+        .muze-image img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+        }
+
+        .muze-image img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform .35s ease;
+        }
+
+    .muze-card:hover .muze-image img {
+        transform: scale(1.035);
+    }
+
+    .resim-yok {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        color: #74675d;
+        font-size: 13px;
+        font-weight: 650;
+        text-align: center;
+    }
+
+    .muze-content {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        padding: 19px;
+    }
+
+    .muze-ilce {
+        display: inline-flex;
+        align-self: flex-start;
+        margin-bottom: 11px;
+        padding: 5px 10px;
+        border-radius: 999px;
+        background: #f0e7dd;
+        color: #705d4e;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .muze-content h3 {
+        margin: 0 0 18px;
+        color: #352e29;
+        font-size: 17px;
+        font-weight: 750;
+        line-height: 1.45;
+    }
+
+    .detay-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 43px;
+        margin-top: auto;
+        border-radius: 8px;
+        background: #6b5547;
+        color: white;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 700;
+        transition: background .2s ease, transform .2s ease;
+    }
+
+        .detay-btn:hover {
+            background: #554236;
+            color: white;
+            transform: translateY(-1px);
+        }
+
+    .bos-mesaj {
+        padding: 50px 20px;
+        background: #fffdf9;
+        border: 1px solid #e6dcd0;
+        border-radius: 16px;
+        color: #766b62;
+        text-align: center;
+    }
+
+    @@media (max-width: 950px) {
+
+        .muze-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+    @@media (max-width: 620px) {
+
+        .muze-page {
+            padding: 38px 14px 60px;
+        }
+
+        .muze-page-header h1 {
+            font-size: 31px;
+        }
+
+        .muze-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .muze-image {
+            height: 220px;
+        }
+    }
+
+</style>
+
+
+<div class="muze-page">
+
+    <div class="muze-container">
+
+        <div class="muze-page-header">
+
+            <span>
+                Gaziantep Kültür Portalı
+            </span>
+
+            <h1>
+                Müzeler
+            </h1>
+
+        </div>
+
+
+        @if (Model != null && Model.Count > 0)
+        {
+            <div class="muze-grid">
+
+                @foreach (var muze in Model)
+                {
+                    <article class="muze-card">
+
+                        <div class="muze-image">
+
+                            @if (!string.IsNullOrWhiteSpace(muze.Resim))
+                            {
+                                <img src="@muze.Resim"
+                                     alt="@muze.Isim"
+                                     loading="lazy"
+                                     onerror="
+                                                     this.style.display='none';
+                                                     this.nextElementSibling.style.display='flex';
+                                                 " />
+
+                                <div class="resim-yok"
+                                     style="display:none;">
+                                    Bu müze için kapak fotoğrafı henüz eklenmemiştir.
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="resim-yok">
+                                    Bu müze için kapak fotoğrafı henüz eklenmemiştir.
+                                </div>
+                            }
+
+                        </div>
+
+
+                        <div class="muze-content">
+
+                            @if (!string.IsNullOrWhiteSpace(muze.Ilce))
+                            {
+                                <span class="muze-ilce">
+                                    @muze.Ilce
+                                </span>
+                            }
+
+
+                            <h3>
+                                @muze.Isim
+                            </h3>
+
+
+                            <a asp-controller="Muze"
+                               asp-action="Detay"
+                               asp-route-id="@muze.MuzeID"
+                               class="detay-btn">
+
+                                Detaylı Bilgi
+
+                            </a>
+
+                        </div>
+
+                    </article>
+                }
+
+            </div>
+        }
+        else
+        {
+            <div class="bos-mesaj">
+                Henüz müze kaydı bulunmamaktadır.
+            </div>
+        }
+
+    </div>
+
+</div>

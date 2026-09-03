@@ -1,0 +1,18 @@
+﻿@model List<GaziKultur.Entity.Concrete.Kutuphane>
+
+<h1>Kütüphaneler</h1>
+
+@if (Model != null && Model.Count > 0)
+{
+    foreach (var kutuphane in Model)
+    {
+        <div>
+            <h3>@kutuphane.Isim</h3>
+            <p>@kutuphane.KisaAciklama</p>
+        </div>
+    }
+}
+else
+{
+    <p>Henüz kütüphane kaydı yok.</p>
+}

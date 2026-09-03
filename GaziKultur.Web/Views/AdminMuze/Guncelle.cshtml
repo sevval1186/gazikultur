@@ -1,0 +1,157 @@
+﻿@model GaziKultur.Entity.Concrete.Muze
+
+@{
+    ViewData["Title"] = "Müze Güncelle";
+}
+
+<div class="container mt-4 mb-5">
+
+    <h2 class="mb-4">Müze Güncelle</h2>
+
+    <form asp-controller="AdminMuze"
+          asp-action="Guncelle"
+          method="post">
+
+        @Html.AntiForgeryToken()
+
+        <input type="hidden" asp-for="MuzeID" />
+
+        <div class="row">
+
+            <div class="col-md-6 mb-3">
+                <label asp-for="Isim" class="form-label">Müze Adı</label>
+                <input asp-for="Isim" class="form-control" />
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label asp-for="Ilce" class="form-label">İlçe</label>
+                <input asp-for="Ilce" class="form-control" />
+            </div>
+
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="KisaAciklama" class="form-label">Kısa Açıklama</label>
+            <textarea asp-for="KisaAciklama"
+                      class="form-control"
+                      rows="3"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Tarihce" class="form-label">Tarihçe</label>
+            <textarea asp-for="Tarihce"
+                      class="form-control"
+                      rows="7"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Adres" class="form-label">Adres</label>
+            <input asp-for="Adres" class="form-control" />
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-4 mb-3">
+                <label asp-for="ZiyaretGunleri" class="form-label">Ziyaret Günleri</label>
+                <input asp-for="ZiyaretGunleri" class="form-control" />
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label asp-for="AcilisSaati" class="form-label">Açılış Saati</label>
+                <input asp-for="AcilisSaati" class="form-control" />
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label asp-for="KapanisSaati" class="form-label">Kapanış Saati</label>
+                <input asp-for="KapanisSaati" class="form-control" />
+            </div>
+
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="GiseKapanisSaati" class="form-label">Gişe Kapanış Saati</label>
+            <input asp-for="GiseKapanisSaati" class="form-control" />
+        </div>
+
+        <hr class="my-4" />
+
+        <h5 class="mb-3">Giriş Ücreti Bilgileri</h5>
+
+        <div class="row">
+
+            <div class="col-md-4 mb-3">
+                <label asp-for="UcretTL" class="form-label">TL Ücreti</label>
+                <input asp-for="UcretTL" class="form-control" />
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label asp-for="UcretEuro" class="form-label">Euro Ücreti</label>
+                <input asp-for="UcretEuro" class="form-control" />
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label asp-for="MuzekartBilgisi" class="form-label">Müzekart Bilgisi</label>
+                <input asp-for="MuzekartBilgisi" class="form-control" />
+            </div>
+
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="GirisUcreti" class="form-label">Genel Ücret Notu</label>
+            <input asp-for="GirisUcreti" class="form-control" />
+        </div>
+
+        <hr class="my-4" />
+
+        <h5 class="mb-3">İletişim Bilgileri</h5>
+
+        <div class="row">
+
+            <div class="col-md-6 mb-3">
+                <label asp-for="Telefon" class="form-label">Telefon</label>
+                <input asp-for="Telefon" class="form-control" />
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label asp-for="Eposta" class="form-label">E-posta</label>
+                <input asp-for="Eposta" class="form-control" />
+            </div>
+
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Resim" class="form-label">Kapak Fotoğraf Yolu</label>
+            <input asp-for="Resim" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="HaritaLinki" class="form-label">Harita Linki</label>
+            <input asp-for="HaritaLinki" class="form-control" />
+        </div>
+
+        <div class="form-check mb-4">
+
+            <input asp-for="Aktif"
+                   class="form-check-input" />
+
+            <label asp-for="Aktif"
+                   class="form-check-label">
+                Müze aktif olarak yayınlansın
+            </label>
+
+        </div>
+
+        <button type="submit"
+                class="btn btn-primary">
+            Değişiklikleri Kaydet
+        </button>
+
+        <a asp-controller="AdminMuze"
+           asp-action="Index"
+           class="btn btn-secondary">
+            Geri Dön
+        </a>
+
+    </form>
+
+</div>

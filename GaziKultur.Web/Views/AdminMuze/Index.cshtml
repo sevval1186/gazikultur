@@ -1,0 +1,279 @@
+﻿@model List<GaziKultur.Entity.Concrete.Muze>
+
+@{
+    ViewData["Title"] = "Müze Yönetimi";
+}
+
+<style>
+    .admin-page {
+        background: #f4f6f8;
+        min-height: 100vh;
+        padding: 40px 20px 70px;
+    }
+
+    .admin-container {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .admin-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 25px;
+    }
+   
+        .admin-header h1 {
+            margin: 0;
+            color: #17283f;
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        .admin-header p {
+            margin: 6px 0 0;
+            color: #6b7785;
+        }
+
+    .ekle-btn {
+        display: inline-block;
+        background: #1e3a56;
+        color: white;
+        text-decoration: none;
+        padding: 11px 18px;
+        border-radius: 8px;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+        .ekle-btn:hover {
+            background: #142a40;
+            color: white;
+        }
+
+    .admin-card {
+        background: white;
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid #e4e9ee;
+        box-shadow: 0 5px 20px rgba(0,0,0,.06);
+    }
+
+    .admin-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .admin-table th {
+            background: #1d3248;
+            color: white;
+            text-align: left;
+            padding: 14px;
+            font-size: 13px;
+        }
+
+        .admin-table td {
+            padding: 14px;
+            border-bottom: 1px solid #edf0f2;
+            color: #44515e;
+            vertical-align: middle;
+        }
+
+        .admin-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .admin-table tbody tr:hover {
+            background: #f8fafb;
+        }
+
+    .muze-adi {
+        font-weight: 700;
+        color: #20364e;
+    }
+
+    .durum {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .aktif {
+        background: #e9f6ee;
+        color: #267a46;
+    }
+
+    .pasif {
+        background: #f4eaea;
+        color: #a44444;
+    }
+
+    .islem-alani {
+        display: flex;
+        gap: 7px;
+        flex-wrap: wrap;
+    }
+
+    .islem-btn {
+        display: inline-block;
+        padding: 7px 10px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .guncelle-btn {
+        background: #edf3f7;
+        color: #294866;
+    }
+
+        .guncelle-btn:hover {
+            background: #dce8ef;
+            color: #20384f;
+        }
+
+    .sil-btn {
+        background: #fbecec;
+        color: #b24040;
+    }
+
+        .sil-btn:hover {
+            background: #f5dada;
+            color: #932f2f;
+        }
+
+    .bos-mesaj {
+        padding: 40px;
+        text-align: center;
+        color: #6c757d;
+    }
+
+    @@media (max-width: 850px) {
+        .admin-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .admin-card {
+            overflow-x: auto;
+        }
+
+        .admin-table {
+            min-width: 800px;
+        }
+    }
+</style>
+
+<div class="admin-page">
+
+    <div class="admin-container">
+
+        <div class="admin-header">
+
+            <div>
+                <h1>Müze Yönetimi</h1>
+                <p>Müze kayıtlarını ekleyebilir, güncelleyebilir veya silebilirsiniz.</p>
+            </div>
+
+            <a asp-controller="AdminMuze"
+               asp-action="Ekle"
+               class="ekle-btn">
+                + Yeni Müze Ekle
+            </a>
+
+        </div>
+
+        <div class="admin-card">
+
+            @if (Model != null && Model.Count > 0)
+            {
+                <table class="admin-table">
+
+                    <thead>
+                        <tr>
+                            <th>Müze Adı</th>
+                            <th>İlçe</th>
+                            <th>Ziyaret Saatleri</th>
+                            <th>Durum</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        @foreach (var muze in Model)
+                        {
+                            <tr>
+
+                                <td class="muze-adi">
+                                    @muze.Isim
+                                </td>
+
+                                <td>
+                                    @muze.Ilce
+                                </td>
+
+                                <td>
+                                    @muze.AcilisSaati - @muze.KapanisSaati
+                                </td>
+
+                                <td>
+                                    @if (muze.Aktif)
+                                    {
+                                        <span class="durum aktif">
+                                            Aktif
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span class="durum pasif">
+                                            Pasif
+                                        </span>
+                                    }
+                                </td>
+
+                                <td>
+
+                                    <div class="islem-alani">
+
+                                        <a asp-controller="AdminMuze"
+                                           asp-action="Guncelle"
+                                           asp-route-id="@muze.MuzeID"
+                                           class="islem-btn guncelle-btn">
+                                            Güncelle
+                                        </a>
+
+                                        <a asp-controller="AdminMuze"
+                                           asp-action="Sil"
+                                           asp-route-id="@muze.MuzeID"
+                                           class="islem-btn sil-btn">
+                                            Sil
+                                        </a>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+
+                </table>
+            }
+            else
+            {
+                <div class="bos-mesaj">
+                    Veritabanında henüz müze kaydı bulunmamaktadır.
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+</div>

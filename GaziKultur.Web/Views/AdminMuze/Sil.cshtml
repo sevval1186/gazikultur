@@ -1,0 +1,57 @@
+﻿@model GaziKultur.Entity.Concrete.Muze
+
+@{
+    ViewData["Title"] = "Müze Sil";
+}
+
+<div class="container mt-4">
+
+    <div class="card p-4 shadow-sm">
+
+        <h2 class="mb-3">Müze Sil</h2>
+
+        <p>
+            Aşağıdaki müzeyi silmek istediğinize emin misiniz?
+        </p>
+
+        <div class="mb-3">
+            <strong>Müze Adı:</strong>
+            @Model.Isim
+        </div>
+
+        <div class="mb-3">
+            <strong>İlçe:</strong>
+            @Model.Ilce
+        </div>
+
+        <div class="mb-4">
+            <strong>Adres:</strong>
+            @Model.Adres
+        </div>
+
+        <form asp-controller="AdminMuze"
+              asp-action="SilOnay"
+              method="post">
+
+            @Html.AntiForgeryToken()
+
+            <input type="hidden"
+                   name="id"
+                   value="@Model.MuzeID" />
+
+            <button type="submit"
+                    class="btn btn-danger">
+                Evet, Sil
+            </button>
+
+            <a asp-controller="AdminMuze"
+               asp-action="Index"
+               class="btn btn-secondary">
+                Vazgeç
+            </a>
+
+        </form>
+
+    </div>
+
+</div>

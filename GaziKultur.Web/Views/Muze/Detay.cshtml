@@ -1,0 +1,947 @@
+﻿@using System.Collections.Generic
+@model GaziKultur.Entity.Concrete.Muze
+
+@{
+    ViewData["Title"] = Model.Isim;
+
+    var fotograflar = new List<string>();
+
+    var eskiKlasor = "/NewFolder1/NewFolder/";
+    var yeniKlasor = "/NewFolder1/NewFolder - Kopyala/";
+
+    if (Model.Isim == "Zeugma Mozaik Müzesi")
+    {
+        fotograflar = new List<string>
+        {
+            yeniKlasor + "zeugmakapak.jfif",
+            yeniKlasor + "zeugma1.jfif",
+            yeniKlasor + "zeugma2.jfif",
+            yeniKlasor + "zeugma3.jfif",
+            yeniKlasor + "zeugma4.jfif",
+            yeniKlasor + "zeugma5.jfif",
+            yeniKlasor + "zeugma6.jfif",
+            yeniKlasor + "zeugma7.jfif",
+            yeniKlasor + "zeugma8.jfif"
+        };
+    }
+    else if (Model.Isim == "Gaziantep Arkeoloji Müzesi")
+    {
+        fotograflar = new List<string>
+        {
+            eskiKlasor + "arkeolojı.muzesi.jpg",
+            eskiKlasor + "arkeoloji1.jfif",
+            eskiKlasor + "arkeoloji2.jfif",
+            eskiKlasor + "arkeoloji4.jpg",
+            eskiKlasor + "arkeoloji5.jpg"
+        };
+    }
+    else if (Model.Isim == "Gaziantep Oyun ve Oyuncak Müzesi")
+    {
+        fotograflar = new List<string>
+        {
+            eskiKlasor + "oyunveoyuncak1.jpg",
+            eskiKlasor + "oyunveoyuncak2.jpg",
+            eskiKlasor + "oyunveoyuncak3.jpg"
+        };
+    }
+    else if (Model.Isim == "Hamam Müzesi")
+    {
+        fotograflar = new List<string>
+        {
+            eskiKlasor + "hamam.müzesi.jpg",
+            eskiKlasor + "hamammüzesi1.jpg",
+            eskiKlasor + "hamammüzesi2.jpg",
+            eskiKlasor + "hamammüzesi3.jpg",
+            eskiKlasor + "hamammüzesi4.jpg"
+        };
+    }
+    else if (Model.Isim == "Gaziantep Atatürk Anı Müzesi")
+    {
+        fotograflar = new List<string>
+        {
+            yeniKlasor + "ATATÜRK1.jfif",
+            yeniKlasor + "ATATÜRK2.jfif",
+            yeniKlasor + "ATATÜRK3.jfif",
+            yeniKlasor + "ATATÜRK4.jfif",
+            yeniKlasor + "ATATÜRK5.jfif",
+            yeniKlasor + "ATATÜRK6.jfif"
+        };
+    }
+    else if (Model.Isim == "Emine Göğüş Mutfak Müzesi")
+    {
+        fotograflar = new List<string>
+        {
+            eskiKlasor + "emine-gogus-mutfak-muzesi.jpg",
+            eskiKlasor + "mutfakmüzesi1.jfif",
+            eskiKlasor + "mutfakmüzesi2.jfif",
+            eskiKlasor + "mutfakmüzesi3.jfif",
+            eskiKlasor + "mutfakmüzesi4.jfif",
+            eskiKlasor + "mutfakmüzesi5.jpg",
+            eskiKlasor + "mutfakmüzesi6.jfif"
+        };
+    }
+    else if (Model.Isim == "Fıstık Müzesi")
+    {
+        fotograflar = new List<string>
+        {
+            yeniKlasor + "fıstık1.jfif",
+            yeniKlasor + "fıstık2.jfif",
+            yeniKlasor + "fıstık3.jfif",
+            yeniKlasor + "fıstık4.jfif",
+            yeniKlasor + "fıstık5.jpg"
+        };
+    }
+    else if (Model.Isim ==
+             "Panorama 25 Aralık Gaziantep Savunması Kahramanlık Panoraması ve Müzesi")
+    {
+        fotograflar = new List<string>
+        {
+            yeniKlasor + "25aralıkpanorama.jfif",
+            yeniKlasor + "25aralıkpanorama.webp",
+            yeniKlasor + "25aralıkpanorama2.webp"
+        };
+    }
+    else if (Model.Isim == "Bayazhan Gaziantep Kent Müzesi")
+    {
+        fotograflar = new List<string>
+        {
+            yeniKlasor + "bayazhankapak.jpg",
+            yeniKlasor + "bayazhan1.jfif",
+            yeniKlasor + "bayazhan2.jfif",
+            yeniKlasor + "bayazhan3.jfif",
+            yeniKlasor + "bayazhan4.jfif",
+            yeniKlasor + "bayazhan5.jfif",
+            yeniKlasor + "bayazhan6.jpg",
+            yeniKlasor + "bayazhan7.jpg"
+        };
+    }
+    else if (Model.Isim == "Yesemek Açık Hava Müzesi ve Heykel Atölyesi")
+    {
+        fotograflar = new List<string>
+        {
+            yeniKlasor + "yesemekkapak.jpg",
+            yeniKlasor + "yesemek1.jfif",
+            yeniKlasor + "yesemek2.jfif",
+            yeniKlasor + "yesemek3.jfif",
+            yeniKlasor + "yesemek4.jfif",
+            yeniKlasor + "yesemek5.jfif",
+            yeniKlasor + "yesemek6.jfif"
+        };
+    }
+    else if (Model.Isim == "Şahinbey Milli Mücadele Müzesi")
+    {
+        fotograflar = new List<string>
+        {
+            yeniKlasor + "şahinbeykapak.jfif",
+            yeniKlasor + "şahinbey.jfif",
+            yeniKlasor + "şahinbey2.jfif",
+            yeniKlasor + "şahinbey3.jfif",
+            yeniKlasor + "şahinbey4.jfif",
+            yeniKlasor + "şahinbey5.jfif",
+            yeniKlasor + "şahinbey6.jfif",
+            yeniKlasor + "şahinbey7.jfif",
+            yeniKlasor + "şahinbey8.jfif"
+        };
+    }
+    else if (Model.Isim == "Kayna Sabun ve Pekmez Müzesi")
+    {
+        fotograflar = new List<string>
+        {
+            yeniKlasor + "kaynakapak.webp",
+            yeniKlasor + "kayna1.jfif",
+            yeniKlasor + "kayna2.jfif",
+            yeniKlasor + "kayna3.jfif",
+            yeniKlasor + "kayna4.jfif",
+            yeniKlasor + "kayna5.jfif",
+            yeniKlasor + "kayna6.webp",
+            yeniKlasor + "kayna7.jfif"
+        };
+    }
+    else if (Model.Isim == "İslam Bilim Tarihi Müzesi")
+    {
+        fotograflar = new List<string>
+        {
+            yeniKlasor + "islamkapak2.webp",
+            yeniKlasor + "islam1.webp",
+            yeniKlasor + "islam2.webp",
+            yeniKlasor + "islam3.webp",
+            yeniKlasor + "islam4.webp",
+            yeniKlasor + "islam5.webp",
+            yeniKlasor + "islam6.webp",
+            yeniKlasor + "islam7.webp",
+            yeniKlasor + "islam8.webp"
+        };
+    }
+    else if (Model.Isim == "Hasan Süzer Etnografya Müzesi")
+    {
+        fotograflar = new List<string>
+        {
+            yeniKlasor + "etnografyakapak.jpg",
+            yeniKlasor + "etnografya1.jpg",
+            yeniKlasor + "etnografya2.jpg",
+            yeniKlasor + "etnografya3.jfif",
+            yeniKlasor + "etnografya4.jfif",
+            yeniKlasor + "etnografya5.jfif",
+            yeniKlasor + "etnografya6.jpg"
+        };
+    }
+    else if (Model.Isim == "Gaziantep Zooloji ve Doğa Müzesi")
+    {
+        fotograflar = new List<string>
+        {
+            yeniKlasor + "zoolojikapak.webp",
+            yeniKlasor + "zooloji1.jfif",
+            yeniKlasor + "zooloji2.jfif",
+            yeniKlasor + "zooloji3.jfif",
+            yeniKlasor + "zooloji4.jfif"
+        };
+    }
+    else if (Model.Isim == "Gaziantep Mevlevihanesi Vakıf Müzesi")
+    {
+        fotograflar = new List<string>
+        {
+            yeniKlasor + "mevlevihanekapak.jfif",
+            yeniKlasor + "mevlevi1.jfif",
+            yeniKlasor + "mevlevi2.jfif",
+            yeniKlasor + "mevlevi3.jfif",
+            yeniKlasor + "mevlevi4.jfif",
+            yeniKlasor + "mevlevi5.jfif",
+            yeniKlasor + "mevlevi6.png"
+        };
+    }
+    else if (Model.Isim == "Gaziantep Dijital Sanat Müzesi")
+    {
+        fotograflar = new List<string>
+        {
+            yeniKlasor + "dijitalsanatkapakfoto.jfif",
+            yeniKlasor + "dijitalsanat1.jfif",
+            yeniKlasor + "dijitalsanat2.jfif",
+            yeniKlasor + "dijitalsanat3.webp",
+            yeniKlasor + "dijitalsanat4.jfif"
+        };
+    }
+
+    if (fotograflar.Count == 0 &&
+        !string.IsNullOrWhiteSpace(Model.Resim))
+    {
+        fotograflar.Add(Model.Resim);
+    }
+
+    var haritaArama =
+        Uri.EscapeDataString(Model.Isim + " " + Model.Adres);
+
+    var haritaEmbed =
+        "https://www.google.com/maps?q=" +
+        haritaArama +
+        "&output=embed";
+}
+
+<style>
+
+    body {
+        background: #f6f2ec;
+    }
+
+    .muze-detay-page {
+        min-height: 100vh;
+        padding: 32px 0 65px;
+        background: #f6f2ec;
+    }
+
+    .detay-container {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .geri-link {
+        display: inline-flex;
+        margin-bottom: 20px;
+        color: #755e4e;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+        .geri-link:hover {
+            color: #4a392f;
+        }
+
+    .ust-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        align-items: stretch;
+    }
+
+    .panel {
+        padding: 28px;
+        background: #fffdf9;
+        border: 1px solid #e5d9cc;
+        border-radius: 17px;
+        box-shadow: 0 7px 22px rgba(72,55,44,.06);
+    }
+
+    .ilce {
+        display: inline-block;
+        margin-bottom: 13px;
+        padding: 6px 11px;
+        background: #efe5da;
+        color: #705a4b;
+        border-radius: 30px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .muze-baslik {
+        margin: 0 0 12px;
+        color: #332b26;
+        font-size: 31px;
+        line-height: 1.2;
+        font-weight: 800;
+    }
+
+    .kisa-aciklama {
+        margin: 0 0 24px;
+        color: #71665d;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .grup-baslik {
+        margin: 23px 0 11px;
+        color: #9b897b;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: .8px;
+        text-transform: uppercase;
+    }
+
+    .bilgi-grid {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 10px;
+    }
+
+    .bilgi-kutu {
+        min-height: 66px;
+        padding: 11px 13px;
+        background: #f8f3ed;
+        border: 1px solid #e7dacc;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+        .bilgi-kutu.tam {
+            grid-column: 1 / -1;
+        }
+
+    .bilgi-baslik {
+        display: block;
+        margin-bottom: 4px;
+        color: #9b897b;
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: .5px;
+        text-transform: uppercase;
+    }
+
+    .bilgi-deger {
+        color: #44372f;
+        font-size: 13px;
+        font-weight: 650;
+        line-height: 1.5;
+    }
+
+    .kucuk-baslik {
+        display: block;
+        margin-bottom: 7px;
+        color: #9b897b;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: .8px;
+        text-transform: uppercase;
+    }
+
+    .tarihce-baslik,
+    .section-title {
+        margin: 0 0 17px;
+        color: #332b26;
+        font-size: 27px;
+        font-weight: 800;
+    }
+
+    .tarihce-metin {
+        color: #675c54;
+        font-size: 15px;
+        line-height: 1.9;
+        white-space: pre-line;
+    }
+
+    .galeri-section,
+    .harita-section {
+        margin-top: 30px;
+    }
+
+    .section-header {
+        margin-bottom: 13px;
+    }
+
+    .slider {
+        position: relative;
+        height: 420px;
+        overflow: hidden;
+        background: #e5d9cc;
+        border-radius: 17px;
+        box-shadow: 0 8px 25px rgba(72,55,44,.09);
+    }
+
+    .slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #e5d9cc;
+        transition: opacity .5s ease;
+    }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .slide img {
+            display: block;
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+
+    .foto-yok {
+        position: absolute;
+        inset: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        color: #6f6259;
+        font-weight: 650;
+    }
+
+    .slider-btn {
+        position: absolute;
+        top: 50%;
+        z-index: 10;
+        width: 43px;
+        height: 43px;
+        transform: translateY(-50%);
+        border: 0;
+        border-radius: 50%;
+        background: rgba(71,54,44,.72);
+        color: white;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+    .slider-prev {
+        left: 16px;
+    }
+
+    .slider-next {
+        right: 16px;
+    }
+
+    .foto-sayac {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        z-index: 10;
+        padding: 6px 11px;
+        border-radius: 20px;
+        background: rgba(71,54,44,.72);
+        color: white;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .slider-dots {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 15px;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255,255,255,.55);
+        cursor: pointer;
+    }
+
+        .dot.active {
+            width: 23px;
+            border-radius: 20px;
+            background: white;
+        }
+
+    .harita-kutu {
+        padding: 9px;
+        background: #fffdf9;
+        border: 1px solid #e5d9cc;
+        border-radius: 17px;
+    }
+
+        .harita-kutu iframe {
+            display: block;
+            width: 100%;
+            height: 390px;
+            border: 0;
+            border-radius: 12px;
+        }
+
+    .harita-alt {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 18px;
+        padding: 14px 7px 5px;
+    }
+
+    .harita-adres {
+        color: #71665d;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .harita-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 16px;
+        background: #725947;
+        color: white;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+        .harita-btn:hover {
+            background: #543f32;
+            color: white;
+        }
+
+    @@media (max-width: 950px) {
+        .ust-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .slider {
+            height: 380px;
+        }
+    }
+
+    @@media (max-width: 600px) {
+        .detay-container {
+            padding: 0 14px;
+        }
+
+        .panel {
+            padding: 20px;
+        }
+
+        .muze-baslik {
+            font-size: 26px;
+        }
+
+        .bilgi-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .bilgi-kutu.tam {
+            grid-column: auto;
+        }
+
+        .slider {
+            height: 300px;
+        }
+
+        .harita-kutu iframe {
+            height: 300px;
+        }
+
+        .harita-alt {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .harita-btn {
+            width: 100%;
+        }
+    }
+
+</style>
+
+<div class="muze-detay-page">
+
+    <div class="detay-container">
+
+        <a asp-controller="Muze"
+           asp-action="Index"
+           class="geri-link">
+            ← Müzeler Listesine Dön
+        </a>
+
+        <div class="ust-grid">
+
+            <section class="panel">
+
+                <span class="ilce">@Model.Ilce</span>
+
+                <h1 class="muze-baslik">
+                    @Model.Isim
+                </h1>
+
+                <p class="kisa-aciklama">
+                    @Model.KisaAciklama
+                </p>
+
+                <div class="grup-baslik">
+                    Ziyaret Bilgileri
+                </div>
+
+                <div class="bilgi-grid">
+
+                    @if (!string.IsNullOrWhiteSpace(Model.Adres))
+                    {
+                        <div class="bilgi-kutu tam">
+                            <span class="bilgi-baslik">Adres</span>
+                            <span class="bilgi-deger">@Model.Adres</span>
+                        </div>
+                    }
+
+                    @if (!string.IsNullOrWhiteSpace(Model.ZiyaretGunleri))
+                    {
+                        <div class="bilgi-kutu">
+                            <span class="bilgi-baslik">Ziyaret Günleri</span>
+                            <span class="bilgi-deger">@Model.ZiyaretGunleri</span>
+                        </div>
+                    }
+
+                    @if (!string.IsNullOrWhiteSpace(Model.AcilisSaati) ||
+                                        !string.IsNullOrWhiteSpace(Model.KapanisSaati))
+                    {
+                        <div class="bilgi-kutu">
+                            <span class="bilgi-baslik">Ziyaret Saatleri</span>
+                            <span class="bilgi-deger">
+                                @Model.AcilisSaati
+                                @if (!string.IsNullOrWhiteSpace(Model.AcilisSaati)
+                                                            && !string.IsNullOrWhiteSpace(Model.KapanisSaati))
+                                {
+                                    <text> - </text>
+                                }
+                                @Model.KapanisSaati
+                            </span>
+                        </div>
+                    }
+
+                    @if (!string.IsNullOrWhiteSpace(Model.GiseKapanisSaati))
+                    {
+                        <div class="bilgi-kutu">
+                            <span class="bilgi-baslik">Gişe Kapanış</span>
+                            <span class="bilgi-deger">@Model.GiseKapanisSaati</span>
+                        </div>
+                    }
+
+                </div>
+
+                @if (!string.IsNullOrWhiteSpace(Model.UcretTL) ||
+                                !string.IsNullOrWhiteSpace(Model.UcretEuro) ||
+                                !string.IsNullOrWhiteSpace(Model.MuzekartBilgisi) ||
+                                !string.IsNullOrWhiteSpace(Model.GirisUcreti))
+                {
+                    <div class="grup-baslik">
+                        Giriş ve Bilet
+                    </div>
+
+                    <div class="bilgi-grid">
+
+                        @if (!string.IsNullOrWhiteSpace(Model.UcretTL))
+                        {
+                            <div class="bilgi-kutu">
+                                <span class="bilgi-baslik">TL Ücreti</span>
+                                <span class="bilgi-deger">@Model.UcretTL</span>
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrWhiteSpace(Model.UcretEuro))
+                        {
+                            <div class="bilgi-kutu">
+                                <span class="bilgi-baslik">Yabancı Ziyaretçi</span>
+                                <span class="bilgi-deger">@Model.UcretEuro</span>
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrWhiteSpace(Model.MuzekartBilgisi))
+                        {
+                            <div class="bilgi-kutu">
+                                <span class="bilgi-baslik">Müzekart</span>
+                                <span class="bilgi-deger">@Model.MuzekartBilgisi</span>
+                            </div>
+                        }
+
+                        @if (string.IsNullOrWhiteSpace(Model.UcretTL)
+                                            && string.IsNullOrWhiteSpace(Model.UcretEuro)
+                                            && string.IsNullOrWhiteSpace(Model.MuzekartBilgisi)
+                                            && !string.IsNullOrWhiteSpace(Model.GirisUcreti))
+                        {
+                            <div class="bilgi-kutu tam">
+                                <span class="bilgi-baslik">Giriş Ücreti</span>
+                                <span class="bilgi-deger">@Model.GirisUcreti</span>
+                            </div>
+                        }
+
+                    </div>
+                }
+
+                @if (!string.IsNullOrWhiteSpace(Model.Telefon) ||
+                                !string.IsNullOrWhiteSpace(Model.Eposta))
+                {
+                    <div class="grup-baslik">
+                        İletişim
+                    </div>
+
+                    <div class="bilgi-grid">
+
+                        @if (!string.IsNullOrWhiteSpace(Model.Telefon))
+                        {
+                            <div class="bilgi-kutu">
+                                <span class="bilgi-baslik">Telefon</span>
+                                <span class="bilgi-deger">@Model.Telefon</span>
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrWhiteSpace(Model.Eposta))
+                        {
+                            <div class="bilgi-kutu">
+                                <span class="bilgi-baslik">E-posta</span>
+                                <span class="bilgi-deger">@Model.Eposta</span>
+                            </div>
+                        }
+
+                    </div>
+                }
+
+            </section>
+
+            <section class="panel">
+
+                <span class="kucuk-baslik">
+                    Kültürel Miras
+                </span>
+
+                <h2 class="tarihce-baslik">
+                    Müze Hakkında
+                </h2>
+
+                <div class="tarihce-metin">
+                    @Model.Tarihce
+                </div>
+
+            </section>
+
+        </div>
+
+        <section class="galeri-section">
+
+            <div class="section-header">
+                <span class="kucuk-baslik">Galeri</span>
+
+                <h2 class="section-title">
+                    Müze Fotoğrafları
+                </h2>
+            </div>
+
+            <div class="slider" id="muzeSlider">
+
+                @if (fotograflar.Count > 0)
+                {
+                    for (int i = 0; i < fotograflar.Count; i++)
+                    {
+                        <div class="slide @(i == 0 ? "active" : "")">
+
+                            <img src="@fotograflar[i]"
+                                 alt="@Model.Isim"
+                                 onerror="
+                                             this.style.display='none';
+                                             this.nextElementSibling.style.display='flex';
+                                         " />
+
+                            <div class="foto-yok">
+                                Fotoğraf yüklenemedi
+                            </div>
+
+                        </div>
+                    }
+
+                    <div class="foto-sayac">
+                        <span id="aktifFoto">1</span>
+                        /
+                        <span>@fotograflar.Count</span>
+                    </div>
+
+                    @if (fotograflar.Count > 1)
+                    {
+                        <button type="button"
+                                class="slider-btn slider-prev"
+                                onclick="slideDegistir(-1)">
+                            ‹
+                        </button>
+
+                        <button type="button"
+                                class="slider-btn slider-next"
+                                onclick="slideDegistir(1)">
+                            ›
+                        </button>
+
+                        <div class="slider-dots">
+
+                            @for (int i = 0; i < fotograflar.Count; i++)
+                            {
+                                <span class="dot @(i == 0 ? "active" : "")"
+                                      onclick="slideGit(@i)">
+                                </span>
+                            }
+
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="foto-yok"
+                         style="display:flex;">
+                        Bu müze için henüz fotoğraf bulunmamaktadır.
+                    </div>
+                }
+
+            </div>
+
+        </section>
+
+        <section class="harita-section">
+
+            <div class="section-header">
+                <span class="kucuk-baslik">Ulaşım</span>
+
+                <h2 class="section-title">
+                    Konum Bilgileri
+                </h2>
+            </div>
+
+            <div class="harita-kutu">
+
+                <iframe src="@haritaEmbed"
+                        loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+
+                <div class="harita-alt">
+
+                    <div class="harita-adres">
+                        @Model.Adres
+                    </div>
+
+                    @if (!string.IsNullOrWhiteSpace(Model.HaritaLinki))
+                    {
+                        <a href="@Model.HaritaLinki"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="harita-btn">
+                            Google Haritalar'da Aç
+                        </a>
+                    }
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</div>
+
+<script>
+
+    let aktifSlide = 0;
+
+    const slideler =
+        document.querySelectorAll("#muzeSlider .slide");
+
+    const noktalar =
+        document.querySelectorAll("#muzeSlider .dot");
+
+    const aktifFotoYazi =
+        document.getElementById("aktifFoto");
+
+
+    function slideGoster(index) {
+
+        if (slideler.length === 0)
+            return;
+
+        if (index >= slideler.length)
+            aktifSlide = 0;
+        else if (index < 0)
+            aktifSlide = slideler.length - 1;
+        else
+            aktifSlide = index;
+
+        slideler.forEach(function (slide) {
+            slide.classList.remove("active");
+        });
+
+        noktalar.forEach(function (dot) {
+            dot.classList.remove("active");
+        });
+
+        slideler[aktifSlide]
+            .classList
+            .add("active");
+
+        if (noktalar.length > aktifSlide) {
+            noktalar[aktifSlide]
+                .classList
+                .add("active");
+        }
+
+        if (aktifFotoYazi) {
+            aktifFotoYazi.textContent =
+                aktifSlide + 1;
+        }
+    }
+
+
+    function slideDegistir(yone) {
+        slideGoster(aktifSlide + yone);
+    }
+
+
+    function slideGit(index) {
+        slideGoster(index);
+    }
+
+</script>

@@ -1,0 +1,54 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GaziKultur.Core", "GaziKultur.Core\GaziKultur.Core.csproj", "{07F5E09F-DE1A-4B49-9B3D-A41F0661B451}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GaziKultur.Entity", "GaziKultur.Entity\GaziKultur.Entity.csproj", "{C33989AC-252C-4174-87AA-46C6541DA1F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GaziKultur.Data", "GaziKultur.Data\GaziKultur.Data.csproj", "{22025AA3-B56F-4C9D-8165-EC3A49655043}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GaziKultur.Service", "GaziKultur.Service\GaziKultur.Service.csproj", "{9D8AD5E0-DEA1-4613-8F6B-4AF4E7968640}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GaziKultur.WebAPI", "GaziKultur.WebAPI\GaziKultur.WebAPI.csproj", "{2FC8D431-F026-4784-94F3-6AB4D6A7FABE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GaziKultur.Web", "GaziKultur.Web\GaziKultur.Web.csproj", "{5A12FDF3-1002-4F8C-9782-3717782755F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07F5E09F-DE1A-4B49-9B3D-A41F0661B451}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07F5E09F-DE1A-4B49-9B3D-A41F0661B451}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07F5E09F-DE1A-4B49-9B3D-A41F0661B451}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07F5E09F-DE1A-4B49-9B3D-A41F0661B451}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C33989AC-252C-4174-87AA-46C6541DA1F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C33989AC-252C-4174-87AA-46C6541DA1F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C33989AC-252C-4174-87AA-46C6541DA1F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C33989AC-252C-4174-87AA-46C6541DA1F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22025AA3-B56F-4C9D-8165-EC3A49655043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22025AA3-B56F-4C9D-8165-EC3A49655043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22025AA3-B56F-4C9D-8165-EC3A49655043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22025AA3-B56F-4C9D-8165-EC3A49655043}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D8AD5E0-DEA1-4613-8F6B-4AF4E7968640}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D8AD5E0-DEA1-4613-8F6B-4AF4E7968640}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D8AD5E0-DEA1-4613-8F6B-4AF4E7968640}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D8AD5E0-DEA1-4613-8F6B-4AF4E7968640}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FC8D431-F026-4784-94F3-6AB4D6A7FABE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FC8D431-F026-4784-94F3-6AB4D6A7FABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FC8D431-F026-4784-94F3-6AB4D6A7FABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FC8D431-F026-4784-94F3-6AB4D6A7FABE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A12FDF3-1002-4F8C-9782-3717782755F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A12FDF3-1002-4F8C-9782-3717782755F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A12FDF3-1002-4F8C-9782-3717782755F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A12FDF3-1002-4F8C-9782-3717782755F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {79CE0A58-083E-48DD-84E8-34A6FA7676FD}
+	EndGlobalSection
+EndGlobal

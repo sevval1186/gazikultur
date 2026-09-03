@@ -1,0 +1,376 @@
+﻿@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+
+<style>
+    .home-page {
+        background: #f6f2ec;
+        color: #332d28;
+    }
+
+    .hero {
+        position: relative;
+        min-height: 76vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        background: linear-gradient(rgba(55, 44, 37, .58), rgba(55, 44, 37, .58)), url('/assets/img/çingenekızı.jpg.jpg') center center / cover no-repeat;
+        color: white;
+    }
+
+    .hero-inner {
+        max-width: 1180px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 90px 20px;
+    }
+
+    .hero-kicker {
+        display: inline-block;
+        margin-bottom: 14px;
+        color: #eadfce;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+    }
+
+    .hero h1 {
+        max-width: 760px;
+        margin: 0 0 18px;
+        font-size: 56px;
+        line-height: 1.08;
+        font-weight: 800;
+    }
+
+    .hero p {
+        max-width: 680px;
+        margin: 0 0 28px;
+        color: rgba(255,255,255,.88);
+        font-size: 18px;
+        line-height: 1.75;
+    }
+
+    .hero-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 22px;
+        border-radius: 8px;
+        background: #b88a44;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        transition: .2s ease;
+    }
+
+        .hero-btn:hover {
+            background: #9f7436;
+            color: white;
+        }
+
+    .contact-section {
+        padding: 72px 20px;
+        background: #f6f2ec;
+    }
+
+    .contact-inner {
+        max-width: 1180px;
+        margin: 0 auto;
+    }
+
+    .contact-head {
+        margin-bottom: 28px;
+    }
+
+    .contact-kicker {
+        display: block;
+        margin-bottom: 7px;
+        color: #9b8b7d;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .contact-head h2 {
+        margin: 0 0 10px;
+        color: #332d28;
+        font-size: 34px;
+        font-weight: 800;
+    }
+
+    .contact-head p {
+        max-width: 760px;
+        margin: 0;
+        color: #70655c;
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .contact-card {
+        background: #fffdf9;
+        border: 1px solid #e7ddd1;
+        border-radius: 16px;
+        padding: 26px;
+        box-shadow: 0 7px 22px rgba(71, 56, 45, .06);
+    }
+
+        .contact-card h3 {
+            margin: 0 0 18px;
+            color: #3d342e;
+            font-size: 20px;
+            font-weight: 750;
+        }
+
+    .contact-item {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        margin-bottom: 14px;
+    }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+    .contact-icon {
+        flex: 0 0 38px;
+        width: 38px;
+        height: 38px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background: #efe4d6;
+        color: #7b6049;
+        font-size: 17px;
+    }
+
+    .contact-label {
+        display: block;
+        margin-bottom: 2px;
+        color: #96877a;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: .5px;
+        text-transform: uppercase;
+    }
+
+    .contact-value {
+        color: #403730;
+        font-size: 14px;
+        line-height: 1.55;
+        font-weight: 600;
+    }
+
+    .contact-note {
+        color: #766b62;
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    @@media (max-width: 900px) {
+        .hero h1 {
+            font-size: 44px;
+        }
+
+        .contact-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @@media (max-width: 600px) {
+        .hero {
+            min-height: 68vh;
+        }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+        .hero-inner,
+        .contact-section {
+            padding-left: 14px;
+            padding-right: 14px;
+        }
+    }
+</style>
+
+<div class="home-page">
+
+    <section class="hero">
+        <div class="hero-inner">
+
+            <span class="hero-kicker">
+                Gaziantep Kültür Portalı
+            </span>
+
+            <h1>
+                Gaziantep'in Kültürel Mirasını Keşfedin
+            </h1>
+
+            <p>
+                Binlerce yıllık geçmişi, zengin müze koleksiyonları,
+                eşsiz tarihi dokusu ve kültürel değerleriyle Gaziantep'i
+                tek bir platform üzerinden keşfedin.
+            </p>
+
+            <a asp-controller="Muze"
+               asp-action="Index"
+               class="hero-btn">
+                Müzeleri Keşfet
+            </a>
+
+        </div>
+    </section>
+
+    <section id="iletisim"
+             class="contact-section">
+
+        <div class="contact-inner">
+
+            <div class="contact-head">
+
+                <span class="contact-kicker">
+                    İletişim
+                </span>
+
+                <h2>
+                    Gaziantep Büyükşehir Belediyesi
+                </h2>
+
+                <p>
+                    Genel belediye hizmetleri, bilgi talepleri ve yönlendirmeler
+                    için aşağıdaki resmî iletişim kanallarını kullanabilirsiniz.
+                </p>
+
+            </div>
+
+            <div class="contact-grid">
+
+                <div class="contact-card">
+
+                    <h3>
+                        İletişim Bilgileri
+                    </h3>
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            <i class="bi bi-telephone"></i>
+                        </div>
+
+                        <div>
+                            <span class="contact-label">Telefon</span>
+                            <div class="contact-value">
+                                0342 909 27 27
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+
+                        <div>
+                            <span class="contact-label">E-posta</span>
+                            <div class="contact-value">
+                                iletisim@gaziantep.bel.tr
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+
+                        <div>
+                            <span class="contact-label">Adres</span>
+                            <div class="contact-value">
+                                Değirmiçem Mahallesi,
+                                Şehit Yusuf Erin Caddesi,
+                                Büyükşehir Belediyesi Binası,
+                                Şehitkamil / Gaziantep
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="contact-card">
+
+                    <h3>
+                        Hızlı İletişim
+                    </h3>
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            <i class="bi bi-headset"></i>
+                        </div>
+
+                        <div>
+                            <span class="contact-label">İstek / Şikâyet Masası</span>
+                            <div class="contact-value">
+                                153
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            <i class="bi bi-whatsapp"></i>
+                        </div>
+
+                        <div>
+                            <span class="contact-label">WhatsApp</span>
+                            <div class="contact-value">
+                                0342 153 00 00
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <p class="contact-note">
+                        Müzelere ait ziyaret saatleri, bilet bilgileri,
+                        iletişim bilgileri ve konumlar ilgili müzenin
+                        detay sayfasında ayrıca gösterilmektedir.
+                    </p>
+
+                    <a asp-controller="Muze"
+                       asp-action="Index"
+                       class="hero-btn"
+                       style="margin-top:8px;">
+                        Müzeleri Gör
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>

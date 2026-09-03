@@ -1,0 +1,81 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\NewFolder\**" />
+    <Compile Remove="Views\AdminMuze\NewFolder\**" />
+    <Compile Remove="Views\NewFolder1\**" />
+    <Compile Remove="Views\NewFolder2\**" />
+    <Compile Remove="Views\NewFolder3\**" />
+    <Compile Remove="Views\NewFolder\**" />
+    <Compile Remove="wwwroot\NewFolder1\NewFolder\NewFolder\**" />
+    <Compile Remove="wwwroot\NewFolder\**" />
+    <Content Remove="Controllers\NewFolder\**" />
+    <Content Remove="Views\AdminMuze\NewFolder\**" />
+    <Content Remove="Views\NewFolder1\**" />
+    <Content Remove="Views\NewFolder2\**" />
+    <Content Remove="Views\NewFolder3\**" />
+    <Content Remove="Views\NewFolder\**" />
+    <Content Remove="wwwroot\NewFolder1\NewFolder\NewFolder\**" />
+    <Content Remove="wwwroot\NewFolder\**" />
+    <EmbeddedResource Remove="Controllers\NewFolder\**" />
+    <EmbeddedResource Remove="Views\AdminMuze\NewFolder\**" />
+    <EmbeddedResource Remove="Views\NewFolder1\**" />
+    <EmbeddedResource Remove="Views\NewFolder2\**" />
+    <EmbeddedResource Remove="Views\NewFolder3\**" />
+    <EmbeddedResource Remove="Views\NewFolder\**" />
+    <EmbeddedResource Remove="wwwroot\NewFolder1\NewFolder\NewFolder\**" />
+    <EmbeddedResource Remove="wwwroot\NewFolder\**" />
+    <None Remove="Controllers\NewFolder\**" />
+    <None Remove="Views\AdminMuze\NewFolder\**" />
+    <None Remove="Views\NewFolder1\**" />
+    <None Remove="Views\NewFolder2\**" />
+    <None Remove="Views\NewFolder3\**" />
+    <None Remove="Views\NewFolder\**" />
+    <None Remove="wwwroot\NewFolder1\NewFolder\NewFolder\**" />
+    <None Remove="wwwroot\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\Class.cs" />
+    <Compile Remove="Controllers\Class1.cs" />
+    <Compile Remove="Controllers\HomeController.cs" />
+    <Compile Remove="Controllers\KutuphaneController.cs" />
+    <Compile Remove="Views\AdminMuze\Guncelle.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Controllers\Index.cshtml" />
+    <Content Remove="wwwroot\NewFolder1\NewFolder - Kopyala\25aralıkpanorama2.webp" />
+    <Content Remove="wwwroot\NewFolder1\NewFolder - Kopyala\dijitalsanat4.jfif" />
+    <Content Remove="wwwroot\NewFolder1\NewFolder - Kopyala\dijitalsanatkapak.htm" />
+    <Content Remove="wwwroot\NewFolder1\NewFolder - Kopyala\islamkapak.webp" />
+    <Content Remove="wwwroot\NewFolder1\NewFolder\arkeoloji3.html" />
+    <Content Remove="wwwroot\NewFolder1\NewFolder\zeugma.jpg.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GaziKultur.Core\GaziKultur.Core.csproj" />
+    <ProjectReference Include="..\GaziKultur.Data\GaziKultur.Data.csproj" />
+    <ProjectReference Include="..\GaziKultur.Entity\GaziKultur.Entity.csproj" />
+    <ProjectReference Include="..\GaziKultur.Service\GaziKultur.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\NewFolder2\" />
+    <Folder Include="wwwroot\NewFolder2\NewFolder3\" />
+  </ItemGroup>
+
+</Project>
